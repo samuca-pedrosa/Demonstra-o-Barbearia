@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nobre Barber Studio — Mais que um corte. Uma assinatura.</title>
+<meta name="description" content="Nobre Barber Studio: barbearia premium (projeto demonstrativo). Cortes, barba e acabamento com precisão e personalidade.">
+<meta property="og:title" content="Nobre Barber Studio">
+<meta property="og:description" content="Mais que um corte. Uma assinatura. Site demonstrativo de barbearia premium.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23101010'/%3E%3Ctext x='32' y='44' font-size='38' text-anchor='middle' fill='%23B88A56' font-family='serif'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#101010;--bg2:#1B1B1B;--bronze:#B88A56;--ink:#F5F1EB;--mute:#A5A19B;--line:rgba(184,138,86,.28);--serif:"Cormorant Garamond",Georgia,serif;--sans:Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.05;margin:0;letter-spacing:.01em}
+h2{font-size:clamp(2.2rem,6vw,3.8rem);text-transform:uppercase}
+.wrap{width:min(1180px,100% - 2.5rem);margin-inline:auto}
+section{padding:clamp(4.5rem,10vw,8rem) 0}
+.eyebrow{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--bronze);font-weight:600;margin:0 0 1rem}
+.lead{color:var(--mute);max-width:56ch}
+:focus-visible{outline:2px solid var(--bronze);outline-offset:3px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.8rem 1.6rem;font:600 .78rem var(--sans);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:1px solid var(--bronze);background:var(--bronze);color:#101010;cursor:pointer;transition:.25s}
+.btn:hover{background:transparent;color:var(--bronze)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--bronze);color:var(--bronze)}
+.btn.sm{min-height:42px;padding:.55rem 1.1rem}
+/* header */
+header.top{position:fixed;inset:0 0 auto;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:.3s}
+header.top.solid{background:rgba(16,16,16,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{text-decoration:none;line-height:1}
+.logo b{font:700 1.7rem var(--serif);letter-spacing:.22em;display:block}
+.logo span{font-size:.55rem;letter-spacing:.42em;color:var(--bronze)}
+nav ul{display:flex;gap:2rem;list-style:none;margin:0;padding:0;align-items:center}
+nav a:not(.btn){font-size:.8rem;text-decoration:none;letter-spacing:.08em;position:relative;padding:.4rem 0}
+nav a:not(.btn)::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--bronze);transition:.3s}
+nav a:not(.btn):hover::after{width:100%}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--ink);width:46px;height:46px;cursor:pointer}
+.burger span{display:block;width:20px;height:1.5px;background:currentColor;margin:5px auto;transition:.3s}
+@media(max-width:900px){.burger{display:block}
+ nav{position:fixed;top:calc(72px + env(safe-area-inset-top,0px));left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);padding:1rem 1.5rem 1.5rem;display:none}
+ nav.open{display:block}nav ul{flex-direction:column;align-items:stretch;gap:0}
+ nav li a{display:block;padding:.9rem 0!important;border-bottom:1px solid rgba(255,255,255,.06)}nav li:last-child{margin-top:1rem}}
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:center;position:relative;padding:7rem 0 5rem;background:radial-gradient(ellipse at 75% 40%,#2a2118 0,transparent 60%),var(--bg);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:url("__HERO__") right center/cover no-repeat;opacity:.55}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#101010 25%,rgba(16,16,16,.45) 100%)}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{font-size:clamp(3rem,10vw,7rem);text-transform:uppercase;margin-bottom:1.5rem}
+.hero h1 em{color:var(--bronze);font-style:normal}
+.hero p.lead{font-size:1.1rem;margin-bottom:2rem}
+.cta-row{display:flex;gap:.9rem;flex-wrap:wrap}
+.stamp{position:absolute;right:max(1.25rem,5vw);bottom:5rem;z-index:2;writing-mode:vertical-rl;font:.7rem var(--sans);letter-spacing:.5em;color:var(--bronze);border-left:1px solid var(--line);padding-left:1rem}
+.scroll{position:absolute;left:50%;bottom:1.5rem;z-index:2;width:1px;height:46px;background:linear-gradient(var(--bronze),transparent);animation:sc 2s infinite}
+@keyframes sc{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.rise{animation:rise .8s both}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}}
+@media(max-width:700px){.stamp{display:none}}
+/* about */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+@media(max-width:850px){.split{grid-template-columns:1fr}}
+.frame{position:relative;aspect-ratio:4/5;background-size:cover;border:1px solid var(--line)}
+.frame::after{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--line);z-index:-1}
+.pillars{display:grid;gap:1.4rem;margin-top:2.2rem}
+.pillar{display:flex;gap:1rem}.pillar svg{flex:none;width:30px;height:30px;stroke:var(--bronze);fill:none;stroke-width:1.3}
+.pillar h3{font-size:1.3rem;margin-bottom:.15rem}.pillar p{margin:0;color:var(--mute);font-size:.92rem}
+/* services */
+.head{margin-bottom:3rem;display:flex;justify-content:space-between;align-items:end;gap:1.5rem;flex-wrap:wrap}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.svc{padding:2rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;transition:.3s;background:transparent}
+.svc:hover,.svc.sel{background:var(--bg2)}
+.svc.sel{box-shadow:inset 0 2px 0 var(--bronze)}
+.svc .row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.svc h3{font-size:1.7rem}.price{font:600 1.5rem var(--serif);color:var(--bronze);white-space:nowrap}
+.svc p{color:var(--mute);font-size:.92rem;flex:1;margin:.7rem 0 1.2rem}
+.dur{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-bottom:1.2rem}
+/* experience */
+.exp{background:var(--bg2);border-block:1px solid var(--line)}
+.marks{display:flex;gap:2rem;flex-wrap:wrap;margin:1.6rem 0 2rem;padding:0;list-style:none}
+.marks li{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze);border-top:1px solid var(--line);padding-top:.7rem}
+/* team */
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:2rem}
+.pro .frame{aspect-ratio:3/4;margin-bottom:1.3rem}.pro .frame::after{display:none}
+.pro h3{font-size:1.7rem}.pro .role{color:var(--bronze);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;margin:.2rem 0 .7rem}
+.pro p{color:var(--mute);font-size:.92rem;margin:0 0 1.1rem}.pro.sel .frame{outline:2px solid var(--bronze);outline-offset:4px}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(130px,20vw,240px);gap:.8rem}
+.gal button{padding:0;border:1px solid var(--line);background-size:cover;background-position:center;cursor:zoom-in;position:relative;overflow:hidden}
+.gal button::after{content:attr(data-cap);position:absolute;inset:auto 0 0;padding:.8rem;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;text-align:left;background:linear-gradient(transparent,rgba(0,0,0,.8));opacity:0;transition:.3s;color:var(--ink)}
+.gal button:hover::after,.gal button:focus-visible::after{opacity:1}
+.gal button:hover{filter:brightness(1.15)}
+.gal .w2{grid-column:span 2}.gal .h2{grid-row:span 2}
+@media(max-width:700px){.gal{grid-template-columns:repeat(2,1fr)}.gal .w2{grid-column:span 2}}
+.note{font-size:.78rem;color:var(--mute);margin-top:1rem}
+dialog{border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:0;width:min(900px,94vw);max-height:92vh}
+dialog::backdrop{background:rgba(0,0,0,.88)}
+dialog .img{aspect-ratio:4/3;background-size:cover;background-position:center}
+dialog .cap{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.2rem;gap:1rem}
+.ibtn{background:none;border:1px solid var(--line);color:var(--ink);min-width:44px;min-height:44px;cursor:pointer;font-size:1.1rem}
+.ibtn:hover{border-color:var(--bronze);color:var(--bronze)}
+/* principles */
+.princ{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:2rem;margin-top:3rem}
+.princ div{border-top:1px solid var(--bronze);padding-top:1.2rem}.princ h3{font-size:1.5rem;margin-bottom:.4rem}.princ p{color:var(--mute);margin:0;font-size:.92rem}
+/* booking */
+.book{background:var(--bg2);border-block:1px solid var(--line)}
+.bgrid{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(2rem,5vw,4rem);margin-top:2.5rem}
+@media(max-width:900px){.bgrid{grid-template-columns:1fr}}
+fieldset{border:0;padding:0;margin:0 0 1.8rem;min-width:0}
+legend{font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--bronze);margin-bottom:.8rem;padding:0}
+.opts{display:flex;flex-wrap:wrap;gap:.6rem}
+.opts input{position:absolute;opacity:0}
+.opts label{border:1px solid var(--line);padding:.7rem 1rem;font-size:.88rem;cursor:pointer;min-height:44px;display:flex;align-items:center;transition:.2s}
+.opts input:checked+label{background:var(--bronze);color:#101010;border-color:var(--bronze)}
+.opts input:focus-visible+label{outline:2px solid var(--ink);outline-offset:2px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:520px){.f2{grid-template-columns:1fr}}
+.fld label{display:block;font-size:.8rem;color:var(--mute);margin-bottom:.4rem}
+.fld input,.fld select{width:100%;min-height:50px;background:var(--bg);color:var(--ink);border:1px solid var(--line);padding:.7rem .9rem;font:1rem var(--sans)}
+.err{color:#e59a8a;font-size:.8rem;min-height:1.1em;margin:.3rem 0 0}
+.sum{border:1px solid var(--line);padding:1.8rem;background:var(--bg);align-self:start;position:sticky;top:96px}
+.sum h3{font-size:1.8rem;margin-bottom:1rem}
+.sum dl{margin:0 0 1.2rem}.sum div{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:.9rem}
+.sum dt{color:var(--mute)}.sum dd{margin:0;text-align:right}
+.sum .btn{width:100%}
+.msg{margin-top:1rem;padding:.9rem 1rem;border:1px solid var(--bronze);font-size:.86rem;display:none}
+.msg.on{display:block}
+/* location */
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:2.5rem;margin-top:3rem}
+.info h3{font-size:1.5rem;margin-bottom:.8rem}.info p,.info li{color:var(--mute);font-size:.94rem}
+.hrs{list-style:none;padding:0;margin:0}.hrs li{display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07);padding:.45rem 0}
+/* final */
+.final{text-align:center;background:radial-gradient(ellipse at center,#2a2118,var(--bg) 70%)}
+.final h2{font-size:clamp(2.4rem,7vw,5rem);margin-bottom:1.2rem}.final .lead{margin:0 auto 2rem}
+footer{border-top:1px solid var(--line);padding:3.5rem 0 6rem;font-size:.88rem;color:var(--mute)}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:2rem}
+footer h4{font:600 .7rem var(--sans);letter-spacing:.25em;text-transform:uppercase;color:var(--bronze);margin:0 0 .8rem}
+footer ul{list-style:none;padding:0;margin:0}footer li{padding:.18rem 0}footer a{text-decoration:none}footer a:hover{color:var(--bronze)}
+.legal{margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.07);font-size:.78rem}
+/* whatsapp */
+.wa{position:fixed;right:max(1rem,env(safe-area-inset-right,0px));bottom:calc(1rem + env(safe-area-inset-bottom,0px));z-index:40;width:58px;height:58px;border-radius:50%;background:var(--bg);border:1px solid var(--bronze);color:var(--bronze);display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.5);transition:.25s}
+.wa:hover{background:var(--bronze);color:#101010;transform:translateY(-3px)}
+.wa svg{width:26px;height:26px;fill:currentColor}
+.reveal{opacity:0;transform:translateY(22px);transition:.8s}.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header class="top" id="top"><div class="wrap bar">
+<a class="logo" href="#inicio" aria-label="Nobre Barber Studio, início"><b>NOBRE</b><span>BARBER STUDIO</span></a>
+<button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+<nav id="nav" aria-label="Principal"><ul>
+<li><a href="#inicio">Início</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#experiencia">Experiência</a></li><li><a href="#barbeiros">Barbeiros</a></li><li><a href="#galeria">Galeria</a></li><li><a href="#contato">Contato</a></li>
+<li><a class="btn sm" href="#agendar">Agendar horário</a></li></ul></nav></div></header>
+
+<main>
+<section class="hero" id="inicio"><div class="wrap">
+<p class="eyebrow rise">Barbearia premium · Projeto demonstrativo</p>
+<h1 class="rise" style="animation-delay:.1s">Seu estilo.<br><em>Sua assinatura.</em></h1>
+<p class="lead rise" style="animation-delay:.2s">Precisão nos detalhes, personalidade em cada corte. Descubra uma nova experiência em barbearia.</p>
+<div class="cta-row rise" style="animation-delay:.3s"><a class="btn" href="#agendar">Agendar meu horário</a><a class="btn ghost" href="#servicos">Conhecer serviços</a></div></div>
+<div class="stamp" aria-hidden="true">ESTILO QUE IMPRESSIONA</div><div class="scroll" aria-hidden="true"></div></section>
+
+<section id="sobre"><div class="wrap split">
+<div class="reveal"><p class="eyebrow">A Nobre</p><h2>Tradição no ofício. Precisão na execução.</h2>
+<p class="lead" style="margin-top:1.4rem">Acreditamos que um bom corte vai além da aparência. É sobre identidade, confiança e atenção a cada detalhe. Na Nobre, cada atendimento é pensado para valorizar seu estilo.</p>
+<div class="pillars">
+<div class="pillar"><svg viewBox="0 0 32 32"><circle cx="9" cy="23" r="4"/><circle cx="23" cy="23" r="4"/><path d="M12 20 26 4M20 20 6 4"/></svg><div><h3>Técnica e precisão</h3><p>Ferramentas afiadas, método e olhar clínico para cada linha.</p></div></div>
+<div class="pillar"><svg viewBox="0 0 32 32"><circle cx="16" cy="11" r="6"/><path d="M5 28c1-6 5-9 11-9s10 3 11 9"/></svg><div><h3>Atendimento personalizado</h3><p>Escutamos antes de cortar. Seu corte, do seu jeito.</p></div></div>
+<div class="pillar"><svg viewBox="0 0 32 32"><path d="M4 28V12l12-8 12 8v16zM13 28v-9h6v9"/></svg><div><h3>Ambiente pensado para você</h3><p>Conforto e calma para um momento só seu (conceito demonstrativo).</p></div></div></div></div>
+<div class="frame reveal" role="img" aria-label="Imagem demonstrativa de barbearia" data-art="0"></div></div></section>
+
+<section id="servicos"><div class="wrap"><div class="head"><div><p class="eyebrow">Serviços e preços</p><h2>Escolha o seu</h2></div><p class="lead" style="margin:0">Valores fictícios, editáveis em <code>CONFIG.services</code>.</p></div>
+<div class="services" id="services"></div></div></section>
+
+<section class="exp" id="experiencia"><div class="wrap split">
+<div class="frame reveal" role="img" aria-label="Imagem demonstrativa de ambiente sofisticado" data-art="3"></div>
+<div class="reveal"><p class="eyebrow">Experiência</p><h2>Seu momento. Seu estilo.</h2>
+<p class="lead" style="margin-top:1.4rem">Cada detalhe do atendimento é pensado para que você relaxe e saia com a confiança renovada. Os elementos abaixo são conceituais, parte da proposta da marca fictícia.</p>
+<ul class="marks"><li>Conforto</li><li>Higiene</li><li>Atendimento</li></ul><a class="btn" href="#agendar">Agendar horário</a></div></div></section>
+
+<section id="barbeiros"><div class="wrap"><div class="head"><div><p class="eyebrow">Equipe</p><h2>Os barbeiros</h2></div><p class="lead" style="margin:0">Profissionais fictícios para demonstração.</p></div>
+<div class="team" id="team"></div></div></section>
+
+<section id="galeria" class="exp"><div class="wrap"><div class="head"><div><p class="eyebrow">Galeria</p><h2>Cortes e detalhes</h2></div></div>
+<div class="gal" id="gal"></div><p class="note">Imagens ilustrativas geradas como espaço reservado. Substitua pelas fotos reais do cliente em <code>CONFIG.gallery</code>.</p></div></section>
+
+<section id="proposta"><div class="wrap"><p class="eyebrow">Nossa proposta</p><h2>Princípios de atendimento</h2>
+<div class="princ"><div><h3>Escuta primeiro</h3><p>Entendemos seu estilo e rotina antes da primeira passada de máquina.</p></div><div><h3>Detalhe sempre</h3><p>Acabamento limpo, simetria e linhas bem definidas.</p></div><div><h3>Sem pressa</h3><p>Tempo reservado para cada cliente, sem atendimento corrido.</p></div></div></div></section>
+
+<section class="book" id="agendar"><div class="wrap"><p class="eyebrow">Solicitar agendamento</p><h2>Monte sua visita</h2>
+<p class="lead" style="margin-top:1rem">Este formulário envia uma <strong>solicitação</strong> pelo WhatsApp. A equipe confirma a disponibilidade; nada é reservado automaticamente.</p>
+<div class="bgrid"><form id="bf" novalidate>
+<fieldset><legend>1 · Serviço</legend><div class="opts" id="o-svc"></div><p class="err" id="e-svc" role="alert"></p></fieldset>
+<fieldset><legend>2 · Barbeiro</legend><div class="opts" id="o-bar"></div><p class="err" id="e-bar" role="alert"></p></fieldset>
+<fieldset><legend>3 · Data e horário</legend><div class="f2"><div class="fld"><label for="dt">Data desejada</label><input type="date" id="dt"><p class="err" id="e-dt" role="alert"></p></div><div class="fld"><label for="tm">Horário desejado</label><select id="tm"><option value="">Selecione</option></select><p class="err" id="e-tm" role="alert"></p></div></div></fieldset>
+<fieldset><legend>4 · Seus dados</legend><div class="fld"><label for="nm">Nome</label><input id="nm" autocomplete="name" placeholder="Como devemos te chamar?"><p class="err" id="e-nm" role="alert"></p></div></fieldset>
+<button class="btn" type="submit">Solicitar pelo WhatsApp</button><div class="msg" id="msg" role="status"></div></form>
+<aside class="sum" aria-live="polite"><h3>Resumo</h3><dl>
+<div><dt>Serviço</dt><dd id="s-svc">—</dd></div><div><dt>Valor estimado</dt><dd id="s-pr">—</dd></div><div><dt>Duração</dt><dd id="s-du">—</dd></div><div><dt>Barbeiro</dt><dd id="s-bar">—</dd></div><div><dt>Data / horário</dt><dd id="s-dt">—</dd></div><div><dt>Nome</dt><dd id="s-nm">—</dd></div></dl>
+<p class="note" style="margin:0">Solicitação sujeita à confirmação da equipe.</p></aside></div></div></section>
+
+<section id="contato"><div class="wrap"><p class="eyebrow">Horários e localização</p><h2>Visite-nos</h2>
+<div class="info"><div><h3>Endereço</h3><p id="addr"></p><a class="btn ghost sm" id="maps" href="#" hidden target="_blank" rel="noopener">Abrir no Google Maps</a></div>
+<div><h3>Horários</h3><ul class="hrs" id="hrs"></ul><p class="note">Horários demonstrativos.</p></div>
+<div><h3>Contato</h3><p>Agendamentos por solicitação via WhatsApp, sujeitos à confirmação.</p><button class="btn sm" id="wa2" type="button">Falar no WhatsApp</button></div></div></div></section>
+
+<section class="final"><div class="wrap"><h2>Seu próximo corte começa aqui.</h2><p class="lead">Escolha seu serviço, encontre seu estilo e entre em contato com nossa equipe.</p><a class="btn" href="#agendar">Agendar meu horário</a></div></section>
+</main>
+
+<footer><div class="wrap"><div class="fg">
+<div><a class="logo" href="#inicio"><b>NOBRE</b><span>BARBER STUDIO</span></a><p style="margin-top:1rem">Mais que um corte. Uma assinatura.</p></div>
+<div><h4>Seções</h4><ul><li><a href="#servicos">Serviços</a></li><li><a href="#experiencia">Experiência</a></li><li><a href="#barbeiros">Barbeiros</a></li><li><a href="#galeria">Galeria</a></li><li><a href="#contato">Contato</a></li></ul></div>
+<div><h4>Serviços</h4><ul id="f-svc"></ul></div>
+<div><h4>Contato</h4><ul id="f-ct"></ul></div></div>
+<p class="legal">© <span id="yr"></span> Nobre Barber Studio. Site <strong>demonstrativo e fictício</strong>: negócio, equipe, preços e endereço não existem.</p></div></footer>
+
+<button class="wa" id="wa" aria-label="Solicitar agendamento pelo WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.2 14c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-3-.7-2.5-1.1-4.1-3.6-4.2-3.8-.1-.2-1-1.3-1-2.5s.6-1.8.9-2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.200 2.200 1.300.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.600-.1l1.900.9c.3.1.5.2.5.3.1.100.1.600-.1 1.200z"/></svg></button>
+
+<dialog id="dlg" aria-label="Imagem ampliada"><div class="img" id="dimg" role="img"></div><div class="cap"><span id="dcap"></span><span><button class="ibtn" id="dp" aria-label="Anterior">‹</button> <button class="ibtn" id="dn" aria-label="Próxima">›</button> <button class="ibtn" id="dc" aria-label="Fechar">✕</button></span></div></dialog>
+
+<script>
+/* ===== CONFIGURAÇÃO CENTRAL — edite aqui para um cliente real ===== */
+const CONFIG={
+ name:"Nobre Barber Studio",
+ whatsapp:"",            // ex.: "5584999999999" (só números, formato internacional). Vazio = modo demonstrativo
+ instagram:"",           // ex.: "https://instagram.com/seuperfil"
+ address:"",             // vazio = "localização será informada"
+ mapsUrl:"",             // link do Google Maps, quando houver endereço real
+ hours:[["Segunda a sexta","09:00 – 20:00"],["Sábado","09:00 – 18:00"],["Domingo","Fechado"]],
+ slots:["09:00","10:00","11:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00"],
+ services:[
+  {id:"trad",name:"Corte tradicional",desc:"Tesoura e máquina, finalizado com navalha e produto.",price:40,min:40},
+  {id:"deg",name:"Corte degradê",desc:"Transição suave e precisa, do zero ao comprimento ideal.",price:45,min:45},
+  {id:"barba",name:"Barba completa",desc:"Toalha quente, modelagem e hidratação.",price:30,min:30},
+  {id:"combo",name:"Corte + barba",desc:"O ritual completo, do corte ao acabamento.",price:65,min:75},
+  {id:"acab",name:"Acabamento e sobrancelha",desc:"Contornos limpos e sobrancelha alinhada.",price:15,min:15},
+  {id:"kids",name:"Corte infantil",desc:"Cuidado e paciência para os pequenos.",price:35,min:30}],
+ team:[
+  {id:"rafael",name:"Rafael Mendes",role:"Especialista em degradê",bio:"Obsessão por transições limpas e simetria."},
+  {id:"lucas",name:"Lucas Andrade",role:"Especialista em cortes clássicos",bio:"Tesoura, pente e elegância atemporal."},
+  {id:"gabriel",name:"Gabriel Costa",role:"Especialista em barba e acabamento",bio:"Navalha firme e olhar para os detalhes."}],
+ gallery:[ /* src vazio = arte demonstrativa; ou use "https://.../foto.jpg" */
+  {cap:"Degradê",alt:"Ilustração demonstrativa de corte degradê",cls:"w2 h2"},
+  {cap:"Corte clássico",alt:"Ilustração demonstrativa de corte clássico",cls:""},
+  {cap:"Barba",alt:"Ilustração demonstrativa de barba alinhada",cls:"h2"},
+  {cap:"Acabamento",alt:"Ilustração demonstrativa de acabamento",cls:""},
+  {cap:"Ambiente",alt:"Ilustração demonstrativa de ambiente",cls:"w2"},
+  {cap:"Detalhes",alt:"Ilustração demonstrativa de detalhes",cls:""}]
+};
+/* ================================================================== */
+const $=s=>document.querySelector(s),brl=n=>"R$ "+n.toFixed(2).replace(".",",").replace(",00","");
+const art=i=>{const a=["#2a2118","#1f1c19","#33281c","#171717"][i%4],l=[...Array(14)].map((_,k)=>`<path d='M${30+k*26} 40Q${50+k*24} 250 ${30+k*26} 460' stroke='#B88A56' stroke-opacity='${.08+(k%4)*.05}' fill='none'/>`).join("");
+ const s=`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='${a}'/><stop offset='1' stop-color='#101010'/></linearGradient></defs><rect width='400' height='500' fill='url(#g)'/>${l}<circle cx='200' cy='210' r='70' fill='none' stroke='#B88A56' stroke-opacity='.5'/><text x='200' y='440' text-anchor='middle' font-family='serif' font-size='15' letter-spacing='4' fill='#A5A19B'>IMAGEM DEMONSTRATIVA</text></svg>`;
+ return "data:image/svg+xml,"+encodeURIComponent(s)};
+const bg=(el,i,src)=>{el.style.backgroundImage=`url("${src||art(i)}")`};
+document.documentElement.style.setProperty("--x","0");
+document.querySelector(".hero").style.setProperty("--h","1");
+document.head.insertAdjacentHTML("beforeend",`<style>.hero::before{background-image:url("${art(0)}")!important;background-size:cover!important}</style>`);
+document.querySelectorAll("[data-art]").forEach(e=>bg(e,+e.dataset.art));
+const st={svc:null,bar:null};
+// services
+$("#services").innerHTML=CONFIG.services.map(s=>`<article class="svc" id="c-${s.id}"><div class="row"><h3>${s.name}</h3><span class="price">${brl(s.price)}</span></div><p>${s.desc}</p><div class="dur">Duração estimada · ${s.min} min</div><button class="btn ghost sm" data-svc="${s.id}">Escolher serviço</button></article>`).join("");
+$("#o-svc").innerHTML=CONFIG.services.map(s=>`<span><input type="radio" name="svc" id="r-${s.id}" value="${s.id}"><label for="r-${s.id}">${s.name} · ${brl(s.price)}</label></span>`).join("");
+$("#o-bar").innerHTML=[{id:"",name:"Sem preferência"},...CONFIG.team].map(b=>`<span><input type="radio" name="bar" id="b-${b.id||"any"}" value="${b.id}"><label for="b-${b.id||"any"}">${b.name}</label></span>`).join("");
+$("#team").innerHTML=CONFIG.team.map((b,i)=>`<article class="pro" id="p-${b.id}"><div class="frame" role="img" aria-label="Foto demonstrativa de ${b.name}" data-art="${i+1}"></div><h3>${b.name}</h3><p class="role">${b.role}</p><p>${b.bio}</p><button class="btn ghost sm" data-bar="${b.id}">Escolher profissional</button></article>`).join("");
+document.querySelectorAll(".pro .frame").forEach(e=>bg(e,+e.dataset.art));
+$("#gal").innerHTML=CONFIG.gallery.map((g,i)=>`<button class="${g.cls}" data-i="${i}" data-cap="${g.cap}" aria-label="Ampliar: ${g.cap}"></button>`).join("");
+document.querySelectorAll("#gal button").forEach(b=>bg(b,+b.dataset.i+1,CONFIG.gallery[+b.dataset.i].src));
+$("#tm").innerHTML+=CONFIG.slots.map(t=>`<option>${t}</option>`).join("");
+const today=new Date();today.setMinutes(today.getMinutes()-today.getTimezoneOffset());$("#dt").min=today.toISOString().slice(0,10);
+// summary
+const fmtD=v=>v?v.split("-").reverse().join("/"):"";
+function sum(){const s=CONFIG.services.find(x=>x.id===st.svc),b=CONFIG.team.find(x=>x.id===st.bar);
+ $("#s-svc").textContent=s?s.name:"—";$("#s-pr").textContent=s?brl(s.price):"—";$("#s-du").textContent=s?s.min+" min":"—";
+ $("#s-bar").textContent=st.bar===null?"—":(b?b.name:"Sem preferência");
+ $("#s-dt").textContent=$("#dt").value&&$("#tm").value?fmtD($("#dt").value)+" às "+$("#tm").value:"—";$("#s-nm").textContent=$("#nm").value.trim()||"—";
+ document.querySelectorAll(".svc").forEach(c=>c.classList.toggle("sel",c.id==="c-"+st.svc));
+ document.querySelectorAll(".pro").forEach(c=>c.classList.toggle("sel",c.id==="p-"+st.bar));}
+function pick(k,v,go){st[k]=v;const r=document.getElementById((k==="svc"?"r-":"b-")+(v||"any"));if(r)r.checked=true;sum();if(go)$("#agendar").scrollIntoView()}
+document.addEventListener("click",e=>{const a=e.target.closest("[data-svc]"),b=e.target.closest("[data-bar]");if(a)pick("svc",a.dataset.svc,true);if(b)pick("bar",b.dataset.bar,true)});
+$("#bf").addEventListener("change",e=>{if(e.target.name==="svc")st.svc=e.target.value;if(e.target.name==="bar")st.bar=e.target.value;sum()});
+$("#bf").addEventListener("input",sum);
+// whatsapp
+const wa=t=>{const n=(CONFIG.whatsapp||"").replace(/\D/g,"");const m=$("#msg");
+ if(!n){m.className="msg on";m.textContent="Modo demonstrativo: nenhum número de WhatsApp está configurado, então nenhuma conversa foi aberta. Configure CONFIG.whatsapp para ativar.";return false}
+ window.open("https://wa.me/"+n+"?text="+encodeURIComponent(t),"_blank","noopener");return true};
+$("#bf").addEventListener("submit",e=>{e.preventDefault();const E={svc:st.svc?"":"Escolha um serviço.",bar:st.bar===null?"Escolha um barbeiro ou “sem preferência”.":"",dt:!$("#dt").value?"Informe a data.":$("#dt").value<$("#dt").min?"Escolha uma data a partir de hoje.":"",tm:$("#tm").value?"":"Escolha um horário.",nm:$("#nm").value.trim().length<2?"Informe seu nome.":""};
+ let bad=0;for(const k in E){$("#e-"+k).textContent=E[k];if(E[k])bad++}
+ if(bad){$("#msg").className="msg";return}
+ const s=CONFIG.services.find(x=>x.id===st.svc),b=CONFIG.team.find(x=>x.id===st.bar);
+ const t=`Olá! Gostaria de solicitar um agendamento na ${CONFIG.name}.\n\nNome: ${$("#nm").value.trim()}\nServiço: ${s.name}\nBarbeiro: ${b?b.name:"Sem preferência"}\nData desejada: ${fmtD($("#dt").value)}\nHorário desejado: ${$("#tm").value}\nValor estimado: ${brl(s.price)}\n\nPoderiam confirmar a disponibilidade?`;
+ if(wa(t)){$("#msg").className="msg on";$("#msg").textContent="Solicitação preparada no WhatsApp. O horário só estará garantido após a confirmação da equipe."}});
+const quick=()=>{if((CONFIG.whatsapp||"").replace(/\D/g,""))wa(`Olá! Gostaria de agendar um horário na ${CONFIG.name}.`);else{$("#agendar").scrollIntoView();wa("")}};
+$("#wa").onclick=quick;$("#wa2").onclick=quick;
+// location / footer
+$("#addr").textContent=CONFIG.address||"Endereço fictício: a localização será informada em uma versão real.";
+if(CONFIG.mapsUrl){$("#maps").href=CONFIG.mapsUrl;$("#maps").hidden=false}
+$("#hrs").innerHTML=CONFIG.hours.map(h=>`<li><span>${h[0]}</span><span>${h[1]}</span></li>`).join("");
+$("#f-svc").innerHTML=CONFIG.services.slice(0,4).map(s=>`<li>${s.name}</li>`).join("");
+$("#f-ct").innerHTML=`<li>${CONFIG.whatsapp?"WhatsApp configurado":"WhatsApp: modo demonstrativo"}</li>`+(CONFIG.instagram?`<li><a href="${CONFIG.instagram}" target="_blank" rel="noopener">Instagram</a></li>`:"");
+$("#yr").textContent=new Date().getFullYear();
+// header / menu
+const hd=$("#top"),nav=$("#nav"),bu=$("#burger");
+const sc=()=>hd.classList.toggle("solid",scrollY>30||nav.classList.contains("open"));addEventListener("scroll",sc,{passive:true});sc();
+bu.onclick=()=>{const o=nav.classList.toggle("open");bu.setAttribute("aria-expanded",o);sc()};
+nav.addEventListener("click",e=>{if(e.target.closest("a")){nav.classList.remove("open");bu.setAttribute("aria-expanded",false);sc()}});
+addEventListener("keydown",e=>{if(e.key==="Escape"&&nav.classList.contains("open")){nav.classList.remove("open");bu.focus()}});
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(e=>io.observe(e));
+// modal
+const dlg=$("#dlg");let gi=0;
+const show=i=>{gi=(i+CONFIG.gallery.length)%CONFIG.gallery.length;const g=CONFIG.gallery[gi];bg($("#dimg"),gi+1,g.src);$("#dimg").setAttribute("aria-label",g.alt);$("#dcap").textContent=g.cap};
+$("#gal").addEventListener("click",e=>{const b=e.target.closest("button");if(b){show(+b.dataset.i);dlg.showModal()}});
+$("#dc").onclick=()=>dlg.close();$("#dp").onclick=()=>show(gi-1);$("#dn").onclick=()=>show(gi+1);
+dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+dlg.addEventListener("keydown",e=>{if(e.key==="ArrowLeft")show(gi-1);if(e.key==="ArrowRight")show(gi+1)});
+</script>
+</body>
+</html>
