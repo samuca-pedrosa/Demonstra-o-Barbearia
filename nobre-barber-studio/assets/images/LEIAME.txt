@@ -1,0 +1,1 @@
+Coloque aqui as fotos reais e referencie os caminhos em js/config.js.
